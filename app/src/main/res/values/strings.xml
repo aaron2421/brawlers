@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Brawlers</string>
+
+    <!--  Menu options  -->
+    <string name="c">c</string>
+    <string name="list_brawlers">Lista</string>
+    <string name="add_brawler">Crear</string>
+</resources>

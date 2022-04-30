@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_list_brawlers"
+        android:title="@string/list_brawlers" />
+    <item
+        android:id="@+id/navigation_add_brawler"
+        android:title="@string/add_brawler" />
+    <item
+        android:id="@+id/navigation_c"
+        android:title="@string/c" />
+</menu>
