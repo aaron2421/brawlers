@@ -3,11 +3,22 @@
 
     <item
         android:id="@+id/navigation_list_brawlers"
+        android:enabled="true"
+        android:icon="@drawable/ic_list"
         android:title="@string/list_brawlers" />
     <item
         android:id="@+id/navigation_add_brawler"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
         android:title="@string/add_brawler" />
     <item
+        android:id="@+id/navigation_details_brawler"
+        android:enabled="true"
+        android:icon="@drawable/ic_add"
+        android:title="@string/details_brawler" />
+    <item
         android:id="@+id/navigation_c"
+        android:enabled="true"
+        android:icon="@drawable/ic_extension"
         android:title="@string/c" />
 </menu>

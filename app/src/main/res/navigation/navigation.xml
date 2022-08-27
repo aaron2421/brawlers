@@ -8,16 +8,45 @@
     <fragment
         android:id="@+id/navigation_list_brawlers"
         android:name="com.airasoft.brawlers.listbrawlers.ListBrawlers"
-        android:label="@string/list_brawlers"
-        tools:layout="@layout/list_brawlers_fragment" />
+        android:label="@string/list_brawlers_title"
+        tools:layout="@layout/list_brawlers_fragment">
+        <action
+            android:id="@+id/action_navigation_list_brawlers_to_navigation_details_brawler"
+            app:destination="@id/navigation_details_brawler" />
+        <action
+            android:id="@+id/action_navigation_list_brawlers_to_navigation_add_brawler"
+            app:destination="@id/navigation_add_brawler" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_add_brawler"
         android:name="com.airasoft.brawlers.addbrawler.AddBrawler"
-        android:label="@string/add_brawler"
-        tools:layout="@layout/add_brawler_fragment" />
+        android:label="@string/edit_add_brawler_title"
+        tools:layout="@layout/add_brawler_fragment">
+        <action
+            android:id="@+id/action_navigation_add_brawler_to_navigation_list_brawlers"
+            app:destination="@id/navigation_list_brawlers"
+            app:popUpTo="@id/navigation_list_brawlers"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="brawler"
+            app:argType="com.airasoft.brawlers.model.Brawler" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_c"
         android:name="com.airasoft.brawlers.c.C"
         android:label="@string/c"
         tools:layout="@layout/c_fragment" />
+    <fragment
+        android:id="@+id/navigation_details_brawler"
+        android:name="com.airasoft.brawlers.detailsbrawler.DetailsBrawler"
+        android:label="@string/details_brawler_title">
+        <action
+            android:id="@+id/action_navigation_details_brawler_to_navigation_list_brawlers"
+            app:destination="@id/navigation_list_brawlers"
+            app:popUpTo="@id/navigation_list_brawlers"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="brawler"
+            app:argType="com.airasoft.brawlers.model.Brawler" />
+    </fragment>
 </navigation>

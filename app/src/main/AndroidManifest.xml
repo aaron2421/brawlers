@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Brawlers">
         <activity
             android:name="com.airasoft.brawlers.MainActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

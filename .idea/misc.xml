@@ -14,12 +14,25 @@
         <entry key="..\:/android/Brawkers/app/src/main/res/layout/add_brawler_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/android/Brawkers/app/src/main/res/layout/brawler_list_fragment.xml" value="0.24010416666666667" />
         <entry key="..\:/android/Brawkers/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.2555" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/drawable/ic_favorite.xml" value="0.1875" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout-v26/list_brawlers_item.xml" value="0.25416666666666665" />
         <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/a_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/add_brawler_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/activity_main.xml" value="0.20521590423257802" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/add_brawler_fragment.xml" value="0.20863616930312098" />
         <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/b_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/c_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/list_brawlers_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/details_brawler_fragment.xml" value="0.20863616930312098" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/dropdown_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/fragment_details_brawler.xml" value="0.20863616930312098" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/grid_brawlers_item.xml" value="0.20521590423257802" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/list_brawlers_fragment.xml" value="0.20521590423257802" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/list_brawlers_item.xml" value="0.264" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/layout/list_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20863616930312098" />
         <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/menu/top_app_bar_menu.xml" value="0.20863616930312098" />
+        <entry key="..\:/android/proyectos iniciados con baseproject/brawlers/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2555" />
       </map>
     </option>
   </component>

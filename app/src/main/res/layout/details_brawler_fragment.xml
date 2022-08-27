@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detailsBrawlerViewModel"
+            type="com.airasoft.brawlers.detailsbrawler.DetailsBrawlerViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".detailsbrawler.DetailsBrawler">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/detailsBrawlerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:layout_marginBottom="20dp"
+                        android:contentDescription="@string/brawler_image_desc"
+                        android:scaleType="centerCrop"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/detailsNameLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/name_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsNameValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerName}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Brawler" />
+
+                    <TextView
+                        android:id="@+id/detailsClassLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/class_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsClassValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerClass}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Clase" />
+
+                    <TextView
+                        android:id="@+id/detailsTypeLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/type_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsTypeValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerType}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Tipo" />
+
+                    <TextView
+                        android:id="@+id/detailsHealthLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/health_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsHealthValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerHealth}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Salud" />
+
+                    <TextView
+                        android:id="@+id/detailsSpeedLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/speed_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsSpeedValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerSpeed}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Velocidad" />
+
+                    <TextView
+                        android:id="@+id/detailsAtackLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/atack_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsAtackValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerAtack}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Ataque" />
+
+                    <TextView
+                        android:id="@+id/detailsSuperLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/super_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsSuperValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerSuper}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Super" />
+
+                    <TextView
+                        android:id="@+id/detailsDamageLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/damage_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsDamageValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerDamage}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Daño" />
+
+                    <TextView
+                        android:id="@+id/detailsRangeLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/range_label"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/detailsRangeValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="@{detailsBrawlerViewModel.brawler.brawlerRange}"
+                        android:textColor="?attr/colorPrimary"
+                        android:textSize="18sp"
+                        tools:text="Rango" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

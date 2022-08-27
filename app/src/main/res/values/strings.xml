@@ -1,8 +1,74 @@
 <resources>
     <string name="app_name">Brawlers</string>
 
+    <!--  Lorem  -->
+    <string name="lorem">
+        Lorem ipsum dolor sit amet consectetur adipiscing elit,
+        bibendum facilisi sociosqu fringilla porta felis magnis.
+    </string>
+
     <!--  Menu options  -->
     <string name="c">c</string>
     <string name="list_brawlers">Lista</string>
     <string name="add_brawler">Crear</string>
+    <string name="details_brawler">Detalles</string>
+
+    <string name="favorite">Favoritos</string>
+    <string name="search">Buscar</string>
+    <string name="more">Más</string>
+    <string name="delete_all">Eliminar todos</string>
+
+    <!--  Titles  -->
+    <string name="list_brawlers_title">Lista de brawlers</string>
+    <string name="add_brawler_title">Nuevo brawler</string>
+    <string name="edit_add_brawler_title">Brawler</string>
+    <string name="details_brawler_title">Detalles</string>
+    <string name="c_fragment_title">Pendiente</string>
+
+    <!--  Content description  -->
+    <string name="brawler_image_desc">Imagen de brawler</string>
+
+    <!--  Add brawler labels  -->
+    <string name="name_label">Nombre</string>
+    <string name="type_label">Tipo</string>
+    <string name="health_label">Salud</string>
+    <string name="speed_label">Velocidad</string>
+    <string name="atack_label">Ataque</string>
+    <string name="damage_label">Daño</string>
+    <string name="range_label">Alcance</string>
+    <string name="super_label">Super</string>
+        <!--    Dropdown    -->
+    <string name="class_label">Clase</string>
+        <!--  Class items  -->
+    <string-array name="classes">
+        <item>Luchador</item>
+        <item>Peso pesado</item>
+        <item>Francotirador</item>
+        <item>Lanzador</item>
+        <item>Apoyo</item>
+        <item>Asesino</item>
+        <item>Escupefuego</item>
+        <item>Bateador</item>
+    </string-array>
+        <!--  Type items  -->
+    <string-array name="types">
+        <item>Recompensa de trofeos</item>
+        <item>Especial</item>
+        <item>Superespecial</item>
+        <item>Épico</item>
+        <item>Mítico</item>
+        <item>Legendario</item>
+        <item>Cromático</item>
+    </string-array>
+
+        <!--  Button labels  -->
+    <string name="select_img">Seleccionar imagen</string>
+    <string name="clear">Limpiar</string>
+    <string name="create">Crear</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+
+    <!--  Snackbar texts  -->
+    <string name="cleared_message">Inputs cleared.</string>
+
 </resources>
