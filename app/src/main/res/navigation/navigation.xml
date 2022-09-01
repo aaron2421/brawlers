@@ -39,7 +39,8 @@
     <fragment
         android:id="@+id/navigation_details_brawler"
         android:name="com.airasoft.brawlers.detailsbrawler.DetailsBrawler"
-        android:label="@string/details_brawler_title">
+        android:label="@string/details_brawler_title"
+        tools:layout="@layout/details_brawler_fragment">
         <action
             android:id="@+id/action_navigation_details_brawler_to_navigation_list_brawlers"
             app:destination="@id/navigation_list_brawlers"

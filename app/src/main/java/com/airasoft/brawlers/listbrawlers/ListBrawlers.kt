@@ -50,7 +50,23 @@ class ListBrawlers : Fragment() {
         val floatingButton = binding.addBrawlerFloating
         val nestedScrollView = binding.nestedScrollView
 
-        nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->  })
+        nestedScrollView.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
+            // the delay of the extension of the FAB is set for 15 items
+            if (scrollY > oldScrollY + 15 && floatingButton.isShown) {
+                floatingButton.hide();
+            }
+
+            // the delay of the extension of the FAB is set for 15 items
+            if (scrollY < oldScrollY - 15 && !floatingButton.isShown) {
+                floatingButton.show();
+            }
+
+            // if the nestedScrollView is at the first item of the list then the
+            // floating action should be in show state
+            if (scrollY == 0) {
+                floatingButton.show();
+            }
+        })
 
         listBrawlersViewModel.navigateToAddBrawler.observe(viewLifecycleOwner) { brawler ->
             brawler?.let {
