@@ -19,7 +19,7 @@ interface BrawlersDatabaseDao {
     @Query("SELECT * FROM brawlers_table WHERE brawler_name LIKE :query")
     fun searchBrawler(query: String): Flow<List<Brawler>>
 
-    @Query("SELECT * FROM brawlers_table ORDER BY brawler_type")
+    @Query("SELECT * FROM brawlers_table ORDER BY brawler_name")
     fun getAllBrawlers(): Flow<List<Brawler>>
 
     @Query("DELETE FROM brawlers_table WHERE brawlerId = :brawlerId")

@@ -1,27 +1,23 @@
 package com.airasoft.brawlers.addbrawler
 
-import android.graphics.Bitmap
-import android.graphics.ImageDecoder
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import android.widget.Toolbar
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts.PickVisualMedia
 import androidx.core.net.toUri
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.airasoft.brawlers.R
 import com.airasoft.brawlers.database.BrawlersDatabase
-import com.airasoft.brawlers.databinding.ActivityMainBinding
 import com.airasoft.brawlers.databinding.AddBrawlerFragmentBinding
 import com.airasoft.brawlers.model.Brawler
-import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.snackbar.Snackbar
 
 class AddBrawler : Fragment() {
@@ -30,20 +26,15 @@ class AddBrawler : Fragment() {
 
     private lateinit var arguments: AddBrawlerArgs
     private lateinit var filePath: Uri
-    private lateinit var bitmap: Bitmap
 
-    private val takePhoto =
-        registerForActivityResult(ActivityResultContracts.OpenDocument()) { result ->
-            result?.let {
-                filePath = result
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    val source =
-                        ImageDecoder.createSource(requireContext().contentResolver!!, filePath)
-                    bitmap = ImageDecoder.decodeBitmap(source)
-                }
-                binding.addBrawlerImage.setImageBitmap(bitmap)
-            }
+    private val pickImage = registerForActivityResult(PickVisualMedia()) { uri ->
+        if (uri != null) {
+            filePath = uri
+            binding.addBrawlerImage.setImageURI(filePath)
+        } else {
+            Log.i("addBrawlerImage", "Imagen no seleccionada.")
         }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -99,7 +90,7 @@ class AddBrawler : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.selectImage.setOnClickListener {
-            takePhoto.launch(arrayOf("image/*"))
+            pickImage.launch(PickVisualMediaRequest(PickVisualMedia.ImageOnly))
         }
 
         binding.editBrawler.setOnClickListener {
