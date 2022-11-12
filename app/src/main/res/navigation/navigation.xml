@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_list_brawlers_to_navigation_add_brawler"
             app:destination="@id/navigation_add_brawler" />
+        <action
+            android:id="@+id/action_navigation_list_brawlers_self"
+            app:destination="@id/navigation_list_brawlers" />
     </fragment>
     <fragment
         android:id="@+id/navigation_add_brawler"

@@ -7,7 +7,6 @@ import com.airasoft.brawlers.database.BrawlersRepository
 import com.airasoft.brawlers.model.AlertDialogModel
 import com.airasoft.brawlers.model.SnackbarModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class ListBrawlersViewModel(
@@ -15,9 +14,17 @@ class ListBrawlersViewModel(
     application: Application
 ) : AndroidViewModel(application) {
 
-    val brawlers = repository.getAllBrawlers().asLiveData()
+    val brawlers = repository.getAllBrawlers()
 
     // Navigation config
+    private val _navigateToSelf = MutableLiveData<Boolean?>()
+    val navigateToSelf: LiveData<Boolean?>
+        get() = _navigateToSelf
+
+    fun doneSelfNavigating() {
+        _navigateToSelf.value = null
+    }
+
     private val _navigateToAddBrawler = MutableLiveData<Brawler?>()
     val navigateToAddBrawler: LiveData<Brawler?>
         get() = _navigateToAddBrawler
@@ -76,19 +83,21 @@ class ListBrawlersViewModel(
         )
     }
 
-    fun onDeleteBrawler(brawlerId: Long) {
+    fun onDeleteBrawler(brawler: Brawler) {
         _showAlertDialogEvent.value =
-            AlertDialogModel(true, "¿Desea eliminar el brawler?", "Cancelar", "Eliminar", brawlerId)
+            AlertDialogModel(true, "¿Desea eliminar el brawler?", "Cancelar", "Eliminar", brawler)
     }
 
-    fun deleteBrawlerOptionSelected(brawlerId: Long) {
-        deleteBrawler(brawlerId)
+    fun deleteBrawlerOptionSelected(brawler: Brawler) {
+        deleteBrawler(brawler)
     }
 
-    private fun deleteBrawler(brawlerId: Long) {
+    private fun deleteBrawler(brawler: Brawler) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.deleteBrawler(brawlerId)
+            repository.deleteBrawler(brawler)
         }
+
         _showSnackBarEvent.value = SnackbarModel(true, "Brawler eliminado.")
+        _navigateToSelf.value = true
     }
 }

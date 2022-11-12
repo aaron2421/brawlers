@@ -4,7 +4,6 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -31,7 +30,7 @@ data class Brawler(
     @ColumnInfo(name = "brawler_image")
     var brawlerImage: String = "",
     @PrimaryKey(autoGenerate = true)
-    var brawlerId: Long = 0L
+    var brawlerId: Int = 0
     /*@SerializedName("_id")
     val _id: String,
     @SerializedName("id")

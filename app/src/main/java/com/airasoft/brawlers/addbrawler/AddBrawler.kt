@@ -50,9 +50,6 @@ class AddBrawler : Fragment() {
         addBrawlerViewModel =
             ViewModelProvider(this, viewModelFactory)[AddBrawlerViewModel::class.java]
 
-        binding.addBrawlerViewModel = addBrawlerViewModel
-        binding.lifecycleOwner = viewLifecycleOwner
-
         filePath = arguments.brawler.brawlerImage.toUri()
 
         // Define si se va a editar o crear el brawler
@@ -60,7 +57,16 @@ class AddBrawler : Fragment() {
             binding.editBrawler.visibility = View.VISIBLE
             binding.createBrawler.visibility = View.GONE
 
-            addBrawlerViewModel.setBrawlerData(arguments.brawler)
+            binding.nameEdit.setText(arguments.brawler.brawlerName)
+            binding.classesDropdown.setText(arguments.brawler.brawlerClass)
+            binding.typesDropdown.setText(arguments.brawler.brawlerType)
+            binding.healthEdit.setText(arguments.brawler.brawlerHealth)
+            binding.speedEdit.setText(arguments.brawler.brawlerSpeed)
+            binding.atackEdit.setText(arguments.brawler.brawlerAtack)
+            binding.damageEdit.setText(arguments.brawler.brawlerDamage)
+            binding.rangeEdit.setText(arguments.brawler.brawlerRange)
+            binding.superEdit.setText(arguments.brawler.brawlerSuper)
+            binding.addBrawlerImage.setImageURI(filePath)
         }
 
         addBrawlerViewModel.navigateToListBrawler.observe(viewLifecycleOwner) {
@@ -93,6 +99,10 @@ class AddBrawler : Fragment() {
             pickImage.launch(PickVisualMediaRequest(PickVisualMedia.ImageOnly))
         }
 
+        binding.clearInputs.setOnClickListener {
+            onClearInputs()
+        }
+
         binding.editBrawler.setOnClickListener {
             checkData(true)
         }
@@ -100,6 +110,20 @@ class AddBrawler : Fragment() {
         binding.createBrawler.setOnClickListener {
             checkData(false)
         }
+    }
+
+    private fun onClearInputs() {
+        binding.nameEdit.setText("")
+        binding.classesDropdown.setText("")
+        binding.typesDropdown.setText("")
+        binding.healthEdit.setText("")
+        binding.speedEdit.setText("")
+        binding.atackEdit.setText("")
+        binding.damageEdit.setText("")
+        binding.rangeEdit.setText("")
+        binding.superEdit.setText("")
+
+       addBrawlerViewModel.onClearInputs()
     }
 
     private fun checkData(isEditable: Boolean) {

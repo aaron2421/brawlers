@@ -1,32 +1,19 @@
 package com.airasoft.brawlers.addbrawler
 
 import android.app.Application
-import android.content.Context
-import android.graphics.Bitmap
-import android.util.Log
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.net.toUri
-import androidx.lifecycle.*
-import com.airasoft.brawlers.model.Brawler
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.airasoft.brawlers.database.BrawlersDatabaseDao
+import com.airasoft.brawlers.model.Brawler
 import com.airasoft.brawlers.model.SnackbarModel
-import com.bumptech.glide.Glide
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.io.IOException
 
 class AddBrawlerViewModel(
     private val dataSource: BrawlersDatabaseDao,
     application: Application) : AndroidViewModel(application) {
-
-    private val _brawler = MutableLiveData<Brawler?>()
-    val brawler: LiveData<Brawler?>
-        get() = _brawler
-
-    fun setBrawlerData(brawler: Brawler) {
-        _brawler.value = brawler
-    }
 
     // Navigation config
     private val _navigateToListBrawlers = MutableLiveData<Boolean?>()
@@ -75,7 +62,6 @@ class AddBrawlerViewModel(
     }
 
     private fun clearInputs() {
-        _brawler.value = Brawler()
         _showSnackBarEvent.value = SnackbarModel(true, "Inputs limpios.")
     }
 }

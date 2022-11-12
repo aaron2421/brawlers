@@ -1,22 +1,16 @@
 package com.airasoft.brawlers.detailsbrawler
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.provider.DocumentsContract
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.net.toUri
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.airasoft.brawlers.R
 import com.airasoft.brawlers.database.BrawlersDatabase
 import com.airasoft.brawlers.databinding.DetailsBrawlerFragmentBinding
 import com.bumptech.glide.Glide
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class DetailsBrawler : Fragment() {
@@ -35,10 +29,19 @@ class DetailsBrawler : Fragment() {
 
         val detailsBrawlerViewModel = ViewModelProvider(this, viewModelFactory)[DetailsBrawlerViewModel::class.java]
 
-        binding.detailsBrawlerViewModel = detailsBrawlerViewModel
-        binding.lifecycleOwner = viewLifecycleOwner
+        val receivedBrawler = detailsBrawlerViewModel.brawler
 
-        context?.let { Glide.with(it).load(detailsBrawlerViewModel.brawler.brawlerImage.toUri()).into(binding.detailsBrawlerImage) }
+        Glide.with(binding.detailsBrawlerImage.context).load(receivedBrawler.brawlerImage.toUri()).into(binding.detailsBrawlerImage)
+        binding.detailsNameValue.text = receivedBrawler.brawlerName
+        binding.detailsClassValue.text = receivedBrawler.brawlerClass
+        binding.detailsTypeValue.text = receivedBrawler.brawlerType
+        binding.detailsHealthValue.text = receivedBrawler.brawlerHealth
+        binding.detailsSpeedValue.text = receivedBrawler.brawlerSpeed
+        binding.detailsAtackValue.text = receivedBrawler.brawlerAtack
+        binding.detailsSuperValue.text = receivedBrawler.brawlerSuper
+        binding.detailsDamageValue.text = receivedBrawler.brawlerDamage
+        binding.detailsRangeValue.text = receivedBrawler.brawlerRange
+
 
         detailsBrawlerViewModel.navigateToListBrawler.observe(viewLifecycleOwner) {
             if (it == true) {
