@@ -21,7 +21,6 @@ class ListBrawlers : Fragment() {
     private lateinit var binding: ListBrawlersFragmentBinding
     private lateinit var adapter: BrawlerAdapter
     private lateinit var listBrawlersViewModel: ListBrawlersViewModel
-    private val linearLayout = LinearLayoutManager(context)
     private lateinit var brawlerMutableList: MutableList<Brawler>
 
     override fun onCreateView(
@@ -40,6 +39,10 @@ class ListBrawlers : Fragment() {
 
         brawlerMutableList = repository.getAllBrawlers().toMutableList()
 
+        if (brawlerMutableList.size < 2) {
+            binding.etFilter.visibility = View.GONE
+        }
+
         binding.etFilter.addTextChangedListener { query ->
             val filteredData = brawlerMutableList.filter { brawler ->
                 brawler.brawlerName.lowercase().contains(query.toString().lowercase())
@@ -57,8 +60,10 @@ class ListBrawlers : Fragment() {
             }
         )
 
+        binding.brawlerList.adapter = adapter
+
         //val decoration = DividerItemDecoration(context, manager.orientation)
-        binding.brawlerList.layoutManager = linearLayout
+        binding.brawlerList.layoutManager = LinearLayoutManager(context)
         binding.brawlerList.adapter = adapter
         //binding.brawlerList.addItemDecoration(decoration)
 
